@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Midule 4 Week 1 Assignment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="scss/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js"></script>
+
+</head>
+<body>
+    
+<div class="main-wrapper">
+  
+    <div class="header">
+        <h1>Fresh Food To Go</h1>
+    </div>
+    <div>
+        <h3>Selections</h3>
+    </div>
+    <div id="vue">
+        <div class="catalog">
+            <div class="item" v-for="item in items" :key="item.name">
+                <img :src="item.image" alt="Item Image" class="catalog-image">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+                <button @click="addToCart(item)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#vue',
+        data: {
+            items: [
+            { name: 'Pasta', description: 'Hardy Pasta', image: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Spaghetti_aglio%2C_olio_e_peperoncino_%2816284859030%29.jpg' },
+            { name: 'Red Crab', description: 'Crab from Alaska', image: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Jacques_Lameloise%2C_escab%C3%A8che_d%27%C3%A9crevisses_sur_gaspacho_d%27asperge_et_cresson.jpg' },
+            { name: 'Breakfast Special', description: 'Good for the Soul', image: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Breakfast_at_Irving_Street_Kitchen.jpg' },
+            { name: 'Sea Shells Mix', description: 'For the stuffed lovers', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Seafood_linguine.jpg' },
+            { name: 'Ultimate Kebob', description: 'The best from Middle East', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Various_kebab.jpg' },
+            { name: 'Chicken Steak', description: 'Grilled to profection', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Chicken_steak_with_pepper_sauce.jpg' },
+            { name: 'Filet Mignon', description: 'Juicey Steak seared with Au jus', image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/.Filet_mignon_et_foie_gras_au_muscat_de_Beaumes-de-Venise%2C_Pastis_Bistro%2C_Palo_Alto.jpg' },
+            { name: 'Bistro Brunch', description: 'A brunch of Australia', image: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Dishes_at_Bistro_C%2C_Hastings_Street%2C_Noosa_Heads%2C_Queensland_02.jpg' },
+            { name: 'California Crepe', description: 'Stuffed with grilled shiring', image: 'https://upload.wikimedia.org/wikipedia/commons/3/32/2011-04-09_17.02.43%2C_Whispers_Cafe_and_Creperie%2C_Belmont%2C_CA_%285982715933%29.jpg' },
+            { name: 'Top Burger', description: 'The best burger from Us', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Hamburguesa_de_carne.jpg' },
+            { name: 'Chicken Garlic Pizza', description: 'Our Specialty Pizza', image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Round_Table_chicken_%26_garlic_pizza.JPG' },
+            { name: 'Wok away healthy', description: 'Blend of noodles and wipes', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Stir_Fry_Wok_-_Free_For_Commercial_Use_-_FFCU_%2827159057131%29.jpg' }
+               
+            ]
+        },
+        methods: {
+            addToCart(item) {
+            
+                console.log(item.name + " added to cart.");
+            }
+        }
+    });
+    </script>
+</body>
+</html>

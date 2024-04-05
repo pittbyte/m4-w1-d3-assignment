@@ -1,0 +1,5 @@
+@mixin white-space-left($size) {
+    &:nth-child(4n+1) {
+      margin-left: $size;
+    }
+  }

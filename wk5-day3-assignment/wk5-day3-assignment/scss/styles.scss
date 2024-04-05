@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
+@import 'variables';
+@import 'layout';
+@import 'header';
+@import 'catalog';
+@import 'mixins';
+$color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
+$color-border: rgba(0, 0, 0, 0.24);
+$color-header-bg: rgb(58, 96, 115);
+$font-family-default: "Bitter";
+$max-width: 80em;
+$grid-gap: 1em;
+$catalog-item-padding: 1em;
+$header-padding: 4em;
+$item-border-width: 1px;
+$image-width: 2.1in;
+$image-height: 2.2in;
+$image-border-radius: 4px;
+//Colors:
+/*---------
+rgb(255,255,255)
+rgb(0,0,0)
+rgba(0,0,0,0.5)
+rgba(0,0,0,0.24)
+rgb(22, 34, 42)
+rgb(58, 96, 115)
+
+
+//Fonts:
+Bitter
+FontAwesome
+
+----------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-default;
+}
+
+$max-width: 80em;
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $grid-gap;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: $catalog-item-padding;
+  border: $item-border-width solid $color-border;
+
+  img {
+    width: $image-width;
+    height: $image-height;
+    border-radius: $image-border-radius;
+  }
+
+  h2 {
+    color: $color-black;
+  }
+}
+
+.header {
+  background-color: $color-header-bg;
+  text-align: center;
+  padding: $header-padding;
+
+  h1 {
+    margin: 0;
+    color: $color-header-text;
+  }
+}
+
+h3 {
+  text-align: center;
+}

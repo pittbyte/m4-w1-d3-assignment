@@ -1,0 +1,27 @@
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $grid-gap;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: $catalog-item-padding;
+    border: $item-border-width solid $color-border;
+    @include white-space-left(6em); // mixin for white space
+  
+    img {
+      width: $image-width;
+      height: $image-height;
+      border-radius: $image-border-radius;
+    }
+  
+    h2 {
+      color: $color-black;
+    }
+  }

@@ -1,0 +1,14 @@
+.header {
+    background-color: $color-header-bg;
+    text-align: center;
+    padding: $header-padding;
+  
+    h1 {
+      margin: 0;
+      color: $color-header-text;
+    }
+  }
+  
+  h3 {
+    text-align: center;
+  }
